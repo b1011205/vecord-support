@@ -429,6 +429,41 @@ details {
   color: var(--text);
 }
 
+.contact-notice {
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--border);
+  border-inline-start: 0.4rem solid var(--focus);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  background: var(--surface-soft);
+}
+
+.contact-content {
+  max-width: 52rem;
+  margin: 0 auto 5rem;
+}
+
+.contact-notice h2 {
+  font-size: 1.25rem;
+}
+
+.contact-notice ul {
+  margin-bottom: 0;
+}
+
+.tally-frame {
+  display: block;
+  width: 100%;
+  min-height: 600px;
+  border: 0;
+}
+
+.form-fallback {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  text-align: center;
+}
+
 .faq-list {
   display: grid;
   gap: 0.8rem;
