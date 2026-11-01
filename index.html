@@ -4,12 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0D3557">
-  <meta name="description" content="VECORD（ヴィコード）の公式サポートサイト。愛車の整備履歴、次回メンテナンス、費用、写真を管理するアプリです。">
+  <meta name="description" content="VECORDは愛車1台の整備履歴・次回メンテナンス予定・整備費用をまとめる無料のiPhoneアプリ。ログイン不要、普段の記録は端末内に保存。使い方と整備記録のコツをご案内します。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VECORD">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="VECORD | 愛車の整備記録を、もっと手軽に。">
+  <meta property="og:description" content="愛車1台の整備履歴・次の予定・整備費用をひとつに。ログイン不要のiPhoneアプリです。">
+  <meta property="og:url" content="https://b1011205.github.io/vecord-support/">
+  <meta property="og:image" content="https://b1011205.github.io/vecord-support/assets/brand/app-icon.png">
+  <meta property="og:image:alt" content="VECORDのアプリアイコン">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="VECORD | 愛車の整備記録を、もっと手軽に。">
+  <meta name="twitter:description" content="整備履歴・次の予定・整備費用を端末内で管理。ログイン不要のiPhoneアプリ。">
+  <meta name="twitter:image" content="https://b1011205.github.io/vecord-support/assets/brand/app-icon.png">
   <link rel="canonical" href="https://b1011205.github.io/vecord-support/">
   <link rel="icon" type="image/png" href="assets/brand/favicon.png">
   <link rel="apple-touch-icon" href="assets/brand/app-icon.png">
   <link rel="stylesheet" href="assets/styles.css">
-  <title>VECORD（ヴィコード）— 愛車の記録を、ひとつに。</title>
+  <title>VECORD | 車の整備記録・メンテナンス予定を管理するiPhoneアプリ</title>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -17,6 +29,7 @@
     <nav class="nav" aria-label="メインナビゲーション">
       <a class="brand-link" href="./" aria-current="page"><img class="brand-icon" src="assets/brand/app-icon.png" alt="" width="38" height="38">VECORD</a>
       <ul class="nav-list">
+        <li><a href="articles/">整備記録のコツ</a></li>
         <li><a href="privacy-policy/">プライバシー</a></li>
         <li><a href="support/">サポート</a></li>
         <li><a href="licenses/">OSSライセンス</a></li>
@@ -27,20 +40,48 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div>
-        <p class="eyebrow">VEHICLE + RECORD</p>
-        <h1 id="hero-title">VECORD</h1>
-        <p class="pronunciation">ヴィコード</p>
-        <p class="tagline">愛車の記録を、ひとつに。</p>
-        <p class="lead">整備履歴、次回メンテナンス、費用、写真を端末内でまとめて管理する、愛車のための記録アプリです。</p>
+        <p class="eyebrow">VECORD — ヴィコード</p>
+        <h1 id="hero-title" class="hero-title">愛車の整備記録を、<br>もっと手軽に。</h1>
+        <p class="lead">VECORDは、愛車1台の整備履歴・次回メンテナンス予定・整備費用をまとめて管理できるiPhoneアプリです。</p>
+        <p>紙やスマホのメモに残した記録を、あとから探していませんか。<br>ログイン不要。普段の記録は端末内に保存されます。</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="support/">使い方を見る</a>
-          <a class="button" href="privacy-policy/">データの取扱い</a>
-          <a class="button" href="contact/?source=top-page&amp;os=web&amp;locale=ja-JP">お問い合わせ</a>
+          <a class="button button-primary" href="https://apps.apple.com/jp/app/vecord/id6793060453">App Storeで無料ダウンロード</a>
+          <a class="button" href="#how-to">使い方を見る</a>
         </div>
+        <p class="small-note">iPhone向け・1台の車両を管理。App Storeで対応OSをご確認ください。</p>
       </div>
-      <div class="hero-brand" aria-hidden="true">
-        <img class="hero-brand-icon" src="assets/brand/app-icon.png" alt="" width="1024" height="1024">
+      <figure class="hero-preview">
+        <img src="assets/screenshots/home.jpg" alt="VECORDのホーム画面。愛車の写真、走行距離、整備費と次回整備をまとめて確認" width="640" height="1386" fetchpriority="high">
+        <figcaption>公開中のVECORD 1.2.0の画面イメージ</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="features-title">
+      <div class="section-heading"><p class="eyebrow">FEATURES</p><h2 id="features-title">前回の記録と、次の予定をひとつに。</h2><p class="lead">毎日入力しなくても大丈夫。整備をした日や、予定が決まったときに残せます。</p></div>
+      <div class="card-grid">
+        <article class="card"><h3>整備履歴</h3><p>実施日・走行距離・費用・店舗・メモを記録。過去の点検やオイル交換を見返せます。</p></article>
+        <article class="card"><h3>次回メンテナンス予定</h3><p>予定日や走行距離を登録。予定日に基づくローカル通知を設定できます。</p></article>
+        <article class="card"><h3>整備費用</h3><p>整備にかかった費用を確認。給油代や税金を含むすべての維持費を計算する機能ではありません。</p></article>
+        <article class="card"><h3>車両情報と写真</h3><p>1台の愛車の情報と写真を、端末内にまとめて保存できます。</p></article>
+        <article class="card"><h3>緊急連絡先</h3><p>ディーラー・整備工場・保険会社・ロードサービスの連絡先を整理。電話は確認してから進みます。</p></article>
+        <article class="card"><h3>手動JSONバックアップ</h3><p>設定から作成・復元できます。写真の実ファイルはJSONに含まれません。保存先・共有先をご確認ください。</p></article>
       </div>
+    </section>
+
+    <section class="section" id="how-to" aria-labelledby="how-to-title">
+      <div class="section-heading"><p class="eyebrow">HOW TO</p><h2 id="how-to-title">まずは、ひとつの記録から。</h2></div>
+      <ol class="steps"><li><h3>愛車を登録</h3><p>車両情報を登録します。使い方ガイドは設定から見返せます。</p></li><li><h3>整備履歴を登録</h3><p>直近の整備日・走行距離・費用などを、手元の記録から入力します。</p></li><li><h3>次回メンテナンスを確認</h3><p>メーカーの案内や整備工場と決めた予定を登録して確認します。</p></li></ol>
+      <div class="preview-grid">
+        <figure class="preview-card"><img src="assets/screenshots/maintenance-history.jpg" alt="整備履歴を分類や並べ替えで見返す画面" width="640" height="1386" loading="lazy" decoding="async"><figcaption>何を整備したか、あとから見返す。</figcaption></figure>
+        <figure class="preview-card"><img src="assets/screenshots/maintenance-plan.jpg" alt="次回整備の予定日と走行距離を確認する画面" width="640" height="1386" loading="lazy" decoding="async"><figcaption>次の整備を、日付や距離で確認。</figcaption></figure>
+      </div>
+      <p class="notice">通知は予定日がある次回整備が対象です。走行距離だけの予定はホーム画面で確認してください。通知の配信はOSや端末の設定に左右されます。</p>
+    </section>
+
+    <section class="section" aria-labelledby="articles-title">
+      <div class="section-heading"><p class="eyebrow">GUIDES</p><h2 id="articles-title">整備記録を続けるコツ</h2><p class="lead">何を残すか迷ったら、記録の基本から。</p></div>
+      <div class="article-grid"><article class="card"><h3><a href="articles/oil-change-record/">車のオイル交換記録はどう残す？</a></h3><p>交換日・走行距離・費用を残す方法と、紙・メモ・アプリの使い分け。</p></article><article class="card"><h3><a href="articles/car-maintenance-record/">車の整備履歴をスマホで管理する方法</a></h3><p>点検・修理・費用を、次に見返しやすい形に整理します。</p></article></div>
+      <p><a href="articles/">記事一覧を見る →</a></p>
     </section>
 
     <section class="section" aria-labelledby="information-title">
@@ -73,6 +114,8 @@
     <div class="footer-inner">
       <p>VECORD — 愛車の記録を、ひとつに。</p>
       <ul class="footer-links">
+        <li><a href="https://apps.apple.com/jp/app/vecord/id6793060453">App Store</a></li>
+        <li><a href="support/">サポート・FAQ</a></li>
         <li><a href="contact/?source=top-page&amp;os=web&amp;locale=ja-JP">お問い合わせ</a></li>
         <li><a href="privacy-policy/">プライバシー</a></li>
       </ul>

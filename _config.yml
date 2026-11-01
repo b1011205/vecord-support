@@ -1,0 +1,10 @@
+url: "https://b1011205.github.io"
+baseurl: "/vecord-support"
+# GitHub Pages builds the main branch root with Jekyll. Internal drafts must
+# never become public pages or downloadable source files.
+exclude:
+  - docs
+  - scripts
+  - README.md
+  - Gemfile
+  - Gemfile.lock
