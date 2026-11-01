@@ -24,7 +24,7 @@ GitHub REST `repos/b1011205/vecord-support/pages`で`build_type=legacy`、source
 | 画像 | 既存brand画像、空altは装飾 | 公開1.2.0の3スクリーンショットをローカル配信、内容alt、サイズ指定、下部lazy |
 | モバイル | レスポンシブCSSあり | 既存theme維持、可変グリッド/折り返し、ブラウザ検証 |
 | 404 | 専用noindexページ、ProjectパスのCSS/戻り先 | 変更なし。深いURLでも正しいCSS |
-| Support/Privacy/contact/licenses | 既存静的ページ | 本文・URL・問い合わせ処理を変更しない |
+| Support/Privacy/contact/licenses | 既存静的ページ | Support/Privacy/contactの本文・URL・問い合わせ処理は不変。licensesは最終調整で歴史的な参考一覧の対象範囲を明記（表は不変） |
 | 内部資料 | 未追加 | docs/marketingは生成物から完全除外（noindexで隠す方式ではない） |
 
 サイト全体がインデックス済みとは確認できない。[Googleのsite:参考検索](https://www.google.com/search?q=site%3Ab1011205.github.io%2Fvecord-support%2F)は一致なしと表示。GoogleのURL検査は未実施なので未登録とは断定しない。Search Consoleはログイン前の紹介ページに到達し、プロパティ/所有権/エラー/送信状況/検索指標は未取得。所有権tokenも未取得。GSC導入は[手順書](search-console-setup.md)でPO操作待ち。
