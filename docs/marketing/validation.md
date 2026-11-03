@@ -18,7 +18,7 @@
 | 画像 | 公開1.2.0の3枚を目視、画像欠落なし。下部画像はlazy。原本・未公開UIは変更/使用していない |
 | CSS | ブラウザCSSOMで読み込み確認、モバイル折り返し・日本語フォント・余白を画面確認。App Store CTAは白文字の可読性のため既存brand-blueの単色 |
 | JavaScript | トップ/記事一覧/2記事に追加scriptなし。主要7ページのブラウザerrorログ0件 |
-| 既存Support/Privacy/contact/404 | origin/mainとの差分0、本文・問い合わせ処理不変 |
+| 既存Support/Privacy/contact/404 | 本文・問い合わせ処理不変。2026-11-03にヘッダーナビゲーションを全ページで統一 |
 | licenses | 直接依存表は不変。v1.0.0時点の参考一覧であり、1.2.0の全OSSを網羅しないことを明記 |
 | App Storeリンク | 全新規導線のhrefが素の公式URLと一致。公開Lookupの返却Version1.2.0を確認 |
 | git diff --check | PASS |
@@ -48,3 +48,16 @@ READMEのJekyll build→scripts/check-site.py→scripts/preview.py→HTTP検査�
 - 実機Safariは今回も検査しておらず、NOT TESTEDを維持。
 
 最終確認用ローカルプレビュー: http://127.0.0.1:8028/vecord-support/ 。ビルド先: `/private/tmp/vecord-website-final-review`。公開/mergeは行わず、POのローカルプレビュー最終確認待ち。
+
+## ナビゲーション統一（2026-11-03）
+
+- 開始HEAD `0795ffd6977c46f361339cabfc5772b6fd664f67`、branch `feature/website-seo-growth`、worktree clean。
+- トップは4項目、記事・Support等は3項目、404はブランドのみだった。全9ページを「整備記録のコツ → プライバシー → サポート → OSSライセンス」の4項目・同じ順番へ統一。リンク先は各ページの階層に合わせ、現在ページのaria-currentは維持。本文・CSS・問い合わせ処理は不変。
+- `scripts/check-site.py`に、404を含む全HTMLでナビゲーションのラベル・順序・リンク先が一致する回帰検査を追加。
+- safe Jekyll build、HTML9文書/内部参照175件/正規sitemap8URL、ローカルHTTP200・非公開資料404、Python構文検査、git diff --check: PASS。
+- ブラウザで全9ページ×320/390/1440px幅（計27条件）を再読込して4項目・同順序・横overflowなしを確認。390px幅のオイル交換記事ヘッダーを目視。初回に旧ページのブラウザキャッシュが残ったため、再読込後の表示で判定。
+- 実機SafariはNOT TESTEDのまま。プレビューURLは上記8028を継続使用。この検査段階では未commit/未pushでPO確認待ちだった。
+
+## 公開承認（2026-11-03）
+
+POがローカルプレビューの最終確認と公開を正式承認。確認済みHEADにはナビ統一が含まれないことを報告して一旦停止した後、ナビ統一のcommit/push・再検査・Draft解除・squash merge・Pages公開まで進める追加承認を受領。公開後の検査結果とmerge SHAはPR #1へ記録する。Search Console所有権確認/サイトマップ送信、SNS投稿、App Store metadata変更、アプリRepository変更は対象外。

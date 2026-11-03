@@ -9,6 +9,10 @@ import xml.etree.ElementTree as ET
 
 BASE = "https://b1011205.github.io/vecord-support/"
 STORE = "https://apps.apple.com/jp/app/vecord/id6793060453"
+NAV = [("整備記録のコツ", BASE + "articles/"),
+       ("プライバシー", BASE + "privacy-policy/"),
+       ("サポート", BASE + "support/"),
+       ("OSSライセンス", BASE + "licenses/")]
 PUBLIC = {"", "support/", "privacy-policy/", "licenses/", "contact/",
           "articles/", "articles/oil-change-record/", "articles/car-maintenance-record/"}
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
@@ -20,11 +24,16 @@ class Page(HTMLParser):
         self.stack, self.errors, self.refs, self.images = [], [], [], []
         self.meta, self.ids, self.headings = {}, set(), []
         self.canonical, self.title, self.lang, self.script_count = None, "", None, 0
+        self.nav_links, self.nav_list_depth = [], 0
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag not in VOID:
             self.stack.append(tag)
+        if tag == "ul" and "nav-list" in a.get("class", "").split():
+            self.nav_list_depth = len(self.stack)
+        if tag == "a" and self.nav_list_depth:
+            self.nav_links.append({"href": a.get("href", ""), "text": ""})
         if tag == "html":
             self.lang = a.get("lang")
         if "id" in a:
@@ -51,6 +60,8 @@ class Page(HTMLParser):
     def handle_endtag(self, tag):
         if tag in VOID:
             return
+        if tag == "ul" and len(self.stack) == self.nav_list_depth:
+            self.nav_list_depth = 0
         if not self.stack or self.stack[-1] != tag:
             self.errors.append("unmatched closing tag: " + tag)
         else:
@@ -59,6 +70,8 @@ class Page(HTMLParser):
     def handle_data(self, data):
         if self.stack and self.stack[-1] == "title":
             self.title += data
+        if self.nav_list_depth and self.stack[-1] == "a":
+            self.nav_links[-1]["text"] += data
 
 
 def main():
@@ -99,6 +112,9 @@ def main():
     links = 0
     for file, page in pages.items():
         document_url = BASE + file.relative_to(root).as_posix()
+        nav = [(link["text"].strip(), urljoin(document_url, link["href"]))
+               for link in page.nav_links]
+        assert nav == NAV, (file, "inconsistent header navigation", nav)
         for ref in page.refs + [page.meta[k] for k in ["og:image", "twitter:image"] if k in page.meta]:
             parsed = urlsplit(urljoin(document_url, ref))
             if parsed.netloc != urlsplit(BASE).netloc:
