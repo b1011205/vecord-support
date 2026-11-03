@@ -252,6 +252,37 @@ ol {
   place-items: center;
 }
 
+.hero-title { font-size: clamp(2.15rem, 4.6vw, 3.7rem); letter-spacing: 0; }
+.button-primary[href^="https://apps.apple.com/"] { background: var(--brand-blue); }
+.small-note, figcaption { color: var(--muted); font-size: 0.9rem; }
+.small-note { margin-top: 1rem; }
+.hero-preview { width: min(100%, 19rem); margin: 0 auto; text-align: center; }
+.hero-preview img, .preview-card img { display: block; width: 100%; height: auto; border-radius: 0.8rem; }
+.hero-preview figcaption, .preview-card figcaption { margin-top: 0.75rem; }
+.preview-grid, .article-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.preview-grid { max-width: 42rem; margin: 2rem auto; }
+.preview-card { width: 100%; max-width: 18rem; margin: 0 auto; text-align: center; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; padding-left: 1.5rem; }
+.steps li { padding-left: 0.3rem; }
+.article-shell { max-width: 52rem; margin: 0 auto; padding-bottom: 4rem; }
+.article-body { font-size: 1.05rem; }
+.article-body section { scroll-margin-top: 6rem; }
+.article-body h2 { margin-top: 2rem; }
+.article-body h3 { margin-top: 1.5rem; }
+.article-body p { max-width: 44rem; }
+.article-meta { color: var(--muted); }
+.article-toc { padding: 1.25rem; border-radius: var(--radius-md); background: var(--surface-soft); }
+.article-toc ul { margin-bottom: 0; }
+.article-example { padding: 1.25rem; border: 1px solid var(--border); border-radius: 0.8rem; }
+.article-example dt { font-weight: 700; }
+.article-example dd { margin: 0 0 0.5rem; }
+.article-sources { font-size: 0.95rem; }
+@media (max-width: 40rem) {
+  .steps, .article-grid { grid-template-columns: 1fr; }
+  .preview-grid { gap: 0.75rem; }
+  .article-body { font-size: 1rem; }
+}
+
 .hero-brand-icon {
   display: block;
   width: min(100%, 26rem);
